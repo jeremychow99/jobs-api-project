@@ -21,9 +21,9 @@ paths:
             schema:
               $ref: '#/components/schemas/RegisterUserRequest'
             example:
-              name: ''
-              email: ''
-              password: ''
+              name: 'john'
+              email: 'john@gmail.com'
+              password: 'abc123'
         required: true
       responses:
         '200':
@@ -45,7 +45,8 @@ paths:
             schema:
               $ref: '#/components/schemas/LoginUserRequest'
             example:
-              email: abc@gmail.com
+              email: john@gmail.com
+              password: abc123
         required: true
       responses:
         '200':
@@ -67,8 +68,8 @@ paths:
             schema:
               $ref: '#/components/schemas/CreateJobRequest'
             example:
-              company: urmom
-              position: sweee
+              company: apple
+              position: software dev
         required: true
       responses:
         '200':
@@ -90,6 +91,14 @@ paths:
       deprecated: false
       security:
       - bearer: []
+  /user/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: The user ID
     patch:
       tags:
       - Jobs
@@ -126,14 +135,6 @@ paths:
       deprecated: false
       security:
       - bearer: []
-  /jobs/{id}:
-    parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-        required: true
-        description: The job ID.
     get:
       tags:
       - Jobs
@@ -189,8 +190,8 @@ components:
         position:
           type: string
       example:
-        company: urmom
-        position: sweee
+        company: google
+        position: software engineer
     UpdatejobRequest:
       title: UpdatejobRequest
       required:
@@ -204,7 +205,7 @@ components:
           type: string
       example:
         company: amazon
-        position: swe
+        position: intern
   securitySchemes:
     bearer:
       type: http
