@@ -23,7 +23,7 @@ paths:
             example:
               name: 'john'
               email: 'john@gmail.com'
-              password: 'abc123'
+              password: 'abc123456'
         required: true
       responses:
         '200':
