@@ -91,14 +91,14 @@ paths:
       deprecated: false
       security:
       - bearer: []
-  /user/{id}:
+  /jobs/{id}:
     parameters:
       - in: path
         name: id
         schema:
           type: integer
         required: true
-        description: The user ID
+        description: The job ID
     patch:
       tags:
       - Jobs
