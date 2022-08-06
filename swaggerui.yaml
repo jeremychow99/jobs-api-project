@@ -96,7 +96,7 @@ paths:
       - in: path
         name: id
         schema:
-          type: integer
+          type: string
         required: true
         description: The job ID
     patch:
