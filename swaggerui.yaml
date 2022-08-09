@@ -193,9 +193,12 @@ components:
           type: string
         position:
           type: string
+        status:
+          type: string
       example:
         company: google
         position: software engineer
+        status: interview / declined / pending
     UpdatejobRequest:
       title: UpdatejobRequest
       required:
@@ -207,9 +210,12 @@ components:
           type: string
         position:
           type: string
+        status:
+          type: string
       example:
         company: amazon
         position: intern
+        status: interview / declined / pending
   securitySchemes:
     bearer:
       type: http
